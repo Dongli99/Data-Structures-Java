@@ -47,18 +47,31 @@ public class SingleLinkedList<E> {
         size++;
     }
 
+    /**
+     * Swap two nodes at specific indexes in the SingleLinked List.
+     *
+     * @param first  the first index, must between 0 and size-1
+     * @param second the second index, must between 0 and size-1
+     */
     public void swapNode(int first, int second) {
-        if (first < 0 || second < 0 || first >= getSize() || second >= getSize() || first == second) return;
+        // get the 2 nodes according to the indexes
         Node<E> node1 = getElementAt(first);
         Node<E> node2 = getElementAt(second);
+        // swap elements of the 2 nodes
         E temp = node1.getElement();
         node1.setElement(node2.getElement());
         node2.setElement(temp);
     }
 
+    /**
+     * Return the node at the index from the SingleLinkedList.
+     *
+     * @param index the index of the node need to be returned, must between 0 and size-1
+     * @return designated Node
+     */
     public Node<E> getElementAt(int index) {
-        if (index < 0 || index > getSize())
-            return null;
+        if (index < 0 || index > getSize() - 1)
+            throw new IllegalArgumentException("Index(es) out of range.");
         Node<E> current = head;
         for (int i = 0; i < index; i++)
             current = current.getNext();
