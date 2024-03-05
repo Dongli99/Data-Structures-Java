@@ -53,7 +53,7 @@ public class SingleLinkedList<E> {
      * @param first  the first index, must between 0 and size-1
      * @param second the second index, must between 0 and size-1
      */
-    public void swapNode(int first, int second) {
+    public void swapNodes(int first, int second) {
         // get the 2 nodes according to the indexes
         Node<E> node1 = getElementAt(first);
         Node<E> node2 = getElementAt(second);
